@@ -2,6 +2,8 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.3.5'
 	id 'io.spring.dependency-management' version '1.1.6'
+	id 'org.openjfx.javafxplugin' version '0.0.13'
+	id 'application'
 }
 
 group = 'informaticassa.cat'
@@ -27,12 +29,24 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok:1.18.26'
 	testCompileOnly 'org.projectlombok:lombok:1.18.26'
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
-
+	implementation 'org.openjfx:javafx-controls:17.0.2' // JavaFX Controls
+	implementation 'org.openjfx:javafx-fxml:17.0.2'    // JavaFX FXML
 }
+
+javafx {
+	version = "17.0.2" // Versió de JavaFX
+	modules = [ 'javafx.controls', 'javafx.fxml' ] // Mòduls necessaris
+}
+
 
 bootRun {
+	enabled = false // Desactiva bootRun per evitar conflictes
+}
+
+application {
 	mainClass = 'informaticassa.cat.registra_temps.RegistraTempsApplication'
 }
+
 
 tasks.named('test') {
 	useJUnitPlatform()

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<TabPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="informaticassa.cat.registra_temps.controller.AutenticacioController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <!-- Fitxatge -->
+    <Tab text="Fitxatge">
+        <AnchorPane>
+            <Label text="NIF:" layoutX="100" layoutY="120"/>
+            <TextField fx:id="nifField" layoutX="200" layoutY="120"/>
+
+            <Button text="Fitxar" layoutX="250" layoutY="200" onAction="#fitxar"/>
+        </AnchorPane>
+    </Tab>
+
+    <!-- Autenticació -->
+    <Tab text="Autenticació">
+        <AnchorPane>
+            <Label text="Usuari:" layoutX="100" layoutY="120"/>
+            <TextField fx:id="usuariField" layoutX="200" layoutY="120"/>
+
+            <Label text="Contrasenya:" layoutX="100" layoutY="160"/>
+            <PasswordField fx:id="contrasenyaField" layoutX="200" layoutY="160"/>
+
+            <Button text="Autenticar" layoutX="250" layoutY="200" onAction="#validarLogin"/>
+        </AnchorPane>
+    </Tab>
+
+</TabPane>
